@@ -4414,11 +4414,15 @@ const boyNames = [
 'Zsüsztin'];
 
 const babyNames = girlNames.concat(boyNames);
-function search(letters){
+
+const babyNamesShort = ["Aba", "Ajna"]
+function search(array, letters){
     const capitalized = `${letters.slice(0,1).toUpperCase()}${letters.slice(1,(letters.length))}`;
-    return babyNames.filter(name => {
+    return array.filter(name => {
         return name.includes(letters) ||  name.includes(capitalized);
     }).slice(0,5);
 }
 
-console.log(search('aba'));
+// console.log(search(babyNames, 'aba'));
+
+module.exports=search
